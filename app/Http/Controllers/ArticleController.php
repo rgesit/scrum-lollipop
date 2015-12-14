@@ -54,37 +54,50 @@ class ArticleController extends Controller{
  
     public function primeFactors(Request $req){
  
+        $data2 = array();
         #$article  = Article::find($id);
-        $id = $req->input('number');
-        $tem = $id;
-        if(!is_numeric($id)) {
-            $data = array("number" => $id, "error" => "not a number");
-        } else {
-            $i = 2;
-            $decom = array();
-            while($i * $i <= $id) {
-                if($id % $i) {
-                    $i += 1;
-                } else {
-                    $id = $id / $i;
-                    array_push($decom, $i);
+        $query = explode('&', $_SERVER['QUERY_STRING']);
+        $params = array();
+        foreach( $query as $param ) {
+            list($name, $value) = explode('=', $param, 2);
+            $params[urldecode($name)][] = urldecode($value);
+        } #print_r($params['number']); die();
+        //$id = $req->input('number');
+        
+        foreach($params['number'] as $id) {
+            $tem = $id;
+            if(!is_numeric($tem)) {
+                $data = array("number" => $tem, "error" => "not a number");
+            } elseif($tem > 1000000) {
+                $data = array("number" => $tem, "error" => "too big number (>1e6)");
+            } else {
+                $i = 2;
+                $decom = array();
+                while($i * $i <= $tem) {
+                    if($tem % $i) {
+                        $i += 1;
+                    } else {
+                        $tem = $tem / $i;
+                        array_push($decom, $i);
+                    }
                 }
+                if($tem > 1) {
+                    array_push($decom, $tem);
+                }
+                /*
+                $decom = array();
+                $temp = $id;
+                while($temp >= 2) {
+                    $temp = $temp/2;
+                    #$decom[] = 2;
+                    array_push($decom, 2);
+                }*/
+                $data = array("number" => $id, "decomposition" => $decom);
             }
-            if($id > 1) {
-                array_push($decom, $id);
-            }
-            /*
-            $decom = array();
-            $temp = $id;
-            while($temp >= 2) {
-                $temp = $temp/2;
-                #$decom[] = 2;
-                array_push($decom, 2);
-            }*/
-            $data = array("number" => $tem, "decomposition" => $decom);
+            array_push($data2, $data);
         }
  
-        return response()->json($data);
+        return response()->json($data2);
     }
  
 }

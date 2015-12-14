@@ -25,8 +25,8 @@ class YoseController extends Controller{
 		return response($data)->header('Content-Type', 'application/json');
 	}
 
-	public function astroport($name = 'lolipop')
+	public function astroport($id = null)
 	{
-		return view('astroport', array('name' => $name));
+		return view('astroport', array('id' => $id));
 	}
 }
