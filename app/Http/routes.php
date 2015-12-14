@@ -29,3 +29,5 @@ $app->get('primeFactors','ArticleController@primeFactors');
 $app->get('minesweeper', 'YoseController@minesweeper');
 
 $app->get('/ping', 'YoseController@ping');
+$app->get('/astroport', 'YoseController@astroport');
+$app->get('/astroport/{name}', 'YoseController@astroport');
