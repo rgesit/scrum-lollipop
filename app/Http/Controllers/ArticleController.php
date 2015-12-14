@@ -52,10 +52,10 @@ class ArticleController extends Controller{
         return response()->json($article);
     }
  
-    public function primeFactors($id){
+    public function primeFactors(Request $req){
  
         #$article  = Article::find($id);
-        $i = 0;
+        $id = $req->input('number');
         $decom = array();
         $temp = $id;
         while($temp >= 2) {

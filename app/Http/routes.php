@@ -24,5 +24,5 @@ $app->put('api/article/{id}','ArticleController@updateArticle');
  
 $app->delete('api/article/{id}','ArticleController@deleteArticle');
 
-$app->get('primeFactors?number={id}','ArticleController@primeFactors');
+$app->get('primeFactors','ArticleController@primeFactors');
  
