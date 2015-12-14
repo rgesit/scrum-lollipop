@@ -1,8 +1,7 @@
 <html>
 <head>
-<title>Minesweeper</title>
+	<title>Minesweeper</title>
 </head>
-
 <body>
 
 	<table border="1">
@@ -16,7 +15,7 @@
 				>
 				
 				<?php if($cell == $i && $row == $j) : ?>
-						Minesweeper		
+						<span id="Minesweeper">Minesweeper</span>
 				<?php else:?>
 				&nbsp;
 				<?php endif ?>
