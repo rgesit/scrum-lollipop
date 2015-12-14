@@ -56,18 +56,32 @@ class ArticleController extends Controller{
  
         #$article  = Article::find($id);
         $id = $req->input('number');
+        $tem = $id;
         if(!is_numeric($id)) {
             $data = array("number" => $id, "error" => "not a number");
         } else {
-        
+            $i = 2;
+            $decom = array();
+            while($i * $i <= $id) {
+                if($id % $i) {
+                    $i += 1;
+                } else {
+                    $id = $id / $i;
+                    array_push($decom, $i);
+                }
+            }
+            if($id > 1) {
+                array_push($decom, $id);
+            }
+            /*
             $decom = array();
             $temp = $id;
             while($temp >= 2) {
                 $temp = $temp/2;
                 #$decom[] = 2;
                 array_push($decom, 2);
-            }
-            $data = array("number" => $id, "decomposition" => $decom);
+            }*/
+            $data = array("number" => $tem, "decomposition" => $decom);
         }
  
         return response()->json($data);
