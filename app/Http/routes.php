@@ -27,3 +27,5 @@ $app->delete('api/article/{id}','ArticleController@deleteArticle');
 $app->get('primeFactors','ArticleController@primeFactors');
  
 $app->get('minesweeper', 'YoseController@minesweeper');
+
+$app->get('/ping', 'YoseController@ping');
