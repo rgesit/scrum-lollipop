@@ -59,6 +59,8 @@ class ArticleController extends Controller{
         $tem = $id;
         if(!is_numeric($id)) {
             $data = array("number" => $id, "error" => "not a number");
+        } elseif($id > 1000000) {
+            $data = array("number" => $id, "error" => "too big number (>1e6)");
         } else {
             $i = 2;
             $decom = array();
