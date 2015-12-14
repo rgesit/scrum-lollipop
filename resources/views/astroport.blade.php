@@ -9,10 +9,10 @@
 		<h1>Lollipop</h1>
 
 		<h3>Ship</h3>
-		<p id="gate-1">
+		<p id="gate-1" class="free">
 			<a href="/astroport/ship-1" id="ship-1">An element that will display the name of the ship docked at gate 1</a>
 		</p>
-		<p id="gate-2">
+		<p id="gate-2" class="occupied">
 			<a href="/astroport/ship-2" id="ship-2">An element that will display the name of the ship docked at gate 2</a>
 		</p>
 		<p id="gate-3">
@@ -24,17 +24,28 @@
 
 	<br>
 	<label for="shipname">Ship</label>
-	<input type="text" name="ship" id="ship">
+	<input type="text" name="ship" id="ship" onkeypress="setInput()">
 	<button id="dock" onclick="setName()">Dock</button>
 
-	<script type="text/javascript">
+	<a id="info" class="hidden"></a>
 
+	<script type="text/javascript">
 	function setName() {
 		var name = document.getElementById('ship').value;
 
 		document.getElementById('ship-1').innerHTML = name;
-	}
 
+		if (document.getElementById('gate-1').className == 'free') {
+			document.getElementById('gate-1').className = "occupied";
+			document.getElementById('info').innerHTML = "The Ship has been docked at gate 1";
+			document.getElementById('info').className = "visible";
+		}
+	}
+	function setInput()
+	{
+		document.getElementById('info').innerHTML = "";
+		document.getElementById('info').className = "hidden";
+	}
 	</script>
 </body>
 </html>
