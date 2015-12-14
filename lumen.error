@@ -5,3 +5,123 @@
 2015/12/14 09:10:34 [error] 589#0: *6 FastCGI sent in stderr: "PHP message: PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "POST /api/article?content=suami&title=fikri HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
 2015/12/14 09:10:42 [error] 589#0: *6 FastCGI sent in stderr: "PHP message: PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "POST /api/article?content=anak-ke-2&title=syamil HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
 2015/12/14 09:10:52 [error] 589#0: *6 FastCGI sent in stderr: "PHP message: PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "POST /api/article?content=anak-ke-1&title=shafa HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:24 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:26 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:26 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:27 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:27 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:27 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:27 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:27 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:27 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:27 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:28 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:28 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:28 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:28 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:43:28 [error] 1037#0: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Dotenv: Environment file .env not found or not readable. Create file with your environment settings at /data/project/scrum-lollipop/bootstrap/../.env' in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php:33
+Stack trace:
+#0 /data/project/scrum-lollipop/bootstrap/app.php(5): Dotenv::load('/data/project/s...')
+#1 /data/project/scrum-lollipop/public/index.php(14): require('/data/project/s...')
+#2 {main}
+  thrown in /data/project/scrum-lollipop/vendor/vlucas/phpdotenv/src/Dotenv.php on line 33" while reading response header from upstream, client: 127.0.0.1, server: lumen.lokal, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "lumen.lokal"
+2015/12/14 13:55:04 [error] 1037#0: *33 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 32 bytes) in /data/project/scrum-lollipop/app/Http/Controllers/ArticleController.php on line 65
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /data/project/scrum-lollipop/public/index.php:0
+PHP message: PHP   2. Laravel\Lumen\Application->run() /data/project/scrum-lollipop/public/index.php:28
+PHP message: PHP   3. Laravel\Lumen\Application->dispatch() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1153
+PHP message: PHP   4. Laravel\Lumen\Application->sendThroughPipeline() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1213
+PHP message: PHP   5. Laravel\Lumen\Application->Laravel\Lumen\{closure}() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1442
+PHP message: PHP   6. Laravel\Lumen\Application->handleDispatcherResponse() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1212
+PHP message: PHP   7. Laravel\Lumen\Application->handleFoundRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1262
+PHP message: PHP   8. Laravel\Lumen\Application->callActionOnArrayBasedRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1288
+PHP message: PHP   9. Laravel\Lumen\Application->callControllerAction() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1303
+PHP message: PHP  10. Laravel\Lumen\Application->callLumenController() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1335
+PHP message: PHP  11. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
+PHP message: PHP  12. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
+PHP message: PHP 
+2015/12/14 13:55:07 [error] 1037#0: *33 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 32 bytes) in /data/project/scrum-lollipop/app/Http/Controllers/ArticleController.php on line 65
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /data/project/scrum-lollipop/public/index.php:0
+PHP message: PHP   2. Laravel\Lumen\Application->run() /data/project/scrum-lollipop/public/index.php:28
+PHP message: PHP   3. Laravel\Lumen\Application->dispatch() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1153
+PHP message: PHP   4. Laravel\Lumen\Application->sendThroughPipeline() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1213
+PHP message: PHP   5. Laravel\Lumen\Application->Laravel\Lumen\{closure}() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1442
+PHP message: PHP   6. Laravel\Lumen\Application->handleDispatcherResponse() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1212
+PHP message: PHP   7. Laravel\Lumen\Application->handleFoundRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1262
+PHP message: PHP   8. Laravel\Lumen\Application->callActionOnArrayBasedRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1288
+PHP message: PHP   9. Laravel\Lumen\Application->callControllerAction() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1303
+PHP message: PHP  10. Laravel\Lumen\Application->callLumenController() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1335
+PHP message: PHP  11. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
+PHP message: PHP  12. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
+PHP message: PHP 
