@@ -11,9 +11,8 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->welcome();
-});
+$app->get('/', 'Controller@index');
+$app->get('/aboutme', 'Controller@aboutme');
 
 $app->get('api/article','ArticleController@index');
  
