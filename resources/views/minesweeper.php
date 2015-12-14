@@ -8,9 +8,11 @@
 		<?php for($i= 1; $i<=8; $i++):?>
 			<tr>
 				<?php for($j= 1; $j<=8; $j++):?>
-				<td id="cell-<?php echo $i?>x<?php echo $j ?>"
+				<td
 					<?php if($cell == $i && $row == $j) : ?>
-							title="Minesweeper"			
+							id="Minesweeper"			
+					<?php else: ?>
+						 id="cell-<?php echo $i?>x<?php echo $j ?>"
 					<?php endif ?>
 				>
 				
