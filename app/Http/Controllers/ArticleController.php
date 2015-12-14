@@ -56,14 +56,19 @@ class ArticleController extends Controller{
  
         #$article  = Article::find($id);
         $id = $req->input('number');
-        $decom = array();
-        $temp = $id;
-        while($temp >= 2) {
-            $temp = $temp/2;
-            #$decom[] = 2;
-            array_push($decom, 2);
+        if(!is_numeric($id)) {
+            $data = array("number" => $id, "error" => "not a number");
+        } else {
+        
+            $decom = array();
+            $temp = $id;
+            while($temp >= 2) {
+                $temp = $temp/2;
+                #$decom[] = 2;
+                array_push($decom, 2);
+            }
+            $data = array("number" => $id, "decomposition" => $decom);
         }
-        $data = array("number" => $id, "decomposition" => $decom);
  
         return response()->json($data);
     }
