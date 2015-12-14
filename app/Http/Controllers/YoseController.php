@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 class YoseController extends Controller{
 
 	public function minesweeper(Request $request){
+		if($request->getMethod() == 'POST') {
+			
+		}
 	
 		return view('minesweeper', ['cell' => rand(1,8), 'row'=> rand(1,8)]);
 	}
