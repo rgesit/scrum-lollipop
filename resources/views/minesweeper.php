@@ -1,7 +1,8 @@
 <html><body>
 <label id="title">Minesweeper</label>
-							<label id="cell-1x1" class="any"></label>
-							<label id="cell-1x2"></label>
-							<label id="cell-2x1"></label>
-							<label id="cell-2x2"></label>
+<?php for($i = 1; $i<=8; $i++) :?>
+	<?php for($j = 1; $j<=8; $j++) :?>
+							<label id="cell-<?php echo $i ?>x<?php echo $j?>" class="any"></label>
+						<?php endfor ?>
+					<?php endfor ?>
 							</body></html>
