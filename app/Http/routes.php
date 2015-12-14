@@ -25,3 +25,4 @@ $app->put('api/article/{id}','ArticleController@updateArticle');
  
 $app->delete('api/article/{id}','ArticleController@deleteArticle');
  
+$app->get('minesweeper', 'YoseController@minesweeper');
