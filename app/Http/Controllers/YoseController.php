@@ -13,4 +13,12 @@ class YoseController extends Controller{
 	
 		return view('minesweeper', ['cell' => rand(1,8), 'row'=> rand(1,8)]);
 	}
+
+	public function ping()
+	{
+		$data = array(
+			'alive' => true
+		);
+		return response($data)->header('Content-Type', 'application/json');
+	}
 }
