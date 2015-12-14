@@ -1,4 +1,8 @@
 <html>
+<head>
+<title>Minesweeper</title>
+</head>
+
 <body>
 
 	<table border="1">
@@ -10,12 +14,13 @@
 							title="Minesweeper"			
 					<?php endif ?>
 				>
-				<?
-				php if($cell == $i && $row == $j) : ?>
+				
+				<?php if($cell == $i && $row == $j) : ?>
 						Minesweeper		
 				<?php else:?>
 				&nbsp;
 				<?php endif ?>
+				
 				</td>
 				<?php endfor ?>
 			</tr>
