@@ -44,6 +44,7 @@
 	function setInput()
 	{
 		document.getElementById('info').innerHTML = "";
+		document.getElementById('info').className = "";
 		document.getElementById('info').className = "hidden";
 	}
 	</script>
