@@ -12,8 +12,7 @@
 			console.log(value.trim());
 		
 		if(document.getElementById(cell).innerHTML.trim() == 'bomb'){
-			document.getElementById(cell).className = 'lost';
-		
+			document.getElementById(cell).className = 'lost';		
 		}else{
 			console.log('Gak ada');
 		}
@@ -27,10 +26,7 @@
 <?php for($i = 1; $i<=8; $i++) :?>	
 	<tr>
 	<?php for($j = 1; $j<=8; $j++) :?>
-		<td onclick="check(<?php echo $i ?>, <?php echo $j ?>)"  id="cell-<?php echo $i ?>x<?php echo $j?>" class="">
-		<?php if ($i == $row && $j == $cell ):?>
-			bomb
-		<?php endif ?>
+		<td onclick="check(<?php echo $i ?>, <?php echo $j ?>)"  id="cell-<?php echo $i ?>x<?php echo $j?>" class="lost">
 		</td>
 	<?php endfor ?>
 	</tr>
