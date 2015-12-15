@@ -34,17 +34,16 @@ class YoseController extends Controller{
 	{
 		$width = $request->input('width');
 		$map = $request->input('map');
-		
-		$map_arr[] = array()
+		$map_arr[] = array();
 		// change map representation
 		$count = 0;
 		for ($i=0;$i < $width;$i++) {
-			for ($y=0;$y < $width;$i++) {
-				$map_arr[$i][$y] = $map[$count];
+			$map_arr[$i] = array();
+			for ($j=0;$j < $width;$j++) {
+				$map_arr[$i][$j] = $map[$count];
 				$count++;
 			}
 		}
-		
 		$plane_loc_x = 0;
 		$plane_loc_y = 0;
 		$water_loc_x = 0;
@@ -53,22 +52,21 @@ class YoseController extends Controller{
 		$fire_loc_y = 0;
 		// search for all object location
 		for ($i=0;$i < $width;$i++) {
-			for ($y=0;$y < $width;$i++) {
-				if ($map[$i][$y] === 'P') {
+			for ($y=0;$y < $width;$y++) {
+				if ($map_arr[$i][$y] === "P") {
 					$plane_loc_x = $i;
 					$plane_loc_y = $y;
 				}
-				if ($map[$i][$y] === 'W') {
+				if ($map_arr[$i][$y] === "W") {
 					$water_loc_x = $i;
 					$water_loc_y = $y;					
 				}
-				if ($map[$i][$y] === 'F') {
+				if ($map_arr[$i][$y] === "F") {
 					$fire_loc_x = $i;
 					$fire_loc_y = $y;					
 				}
 			}			
 		}
-		
 		//  map: [
         //  "...",
 		//  "P..",
@@ -88,19 +86,24 @@ class YoseController extends Controller{
 		$moves = array();
 		if ($diff_plane_water_x > 0) {
 			for ($x=0;$x < $diff_plane_water_x;$x++) {
-				
+				$moves[] = array('dx' => 0, 'dy' => 1);
 			}
 		}
 		if ($diff_plane_water_y > 0) {
-			
+			for ($y=0;$y < $diff_plane_water_y;$y++) {
+				$moves[] = array('dx' => 1, 'dy' => 0);
+			}
 		}
 		if ($diff_water_fire_x > 0) {
-			
+			for ($x=0;$x < $diff_water_fire_x;$x++) {
+				$moves[] = array('dx' => 0, 'dy' => 1);
+			}
 		}
 		if ($diff_water_fire_y > 0) {
-			
+			for ($y=0;$y < $diff_water_fire_y;$y++) {
+				$moves[] = array('dx' => 1, 'dy' => 0);
+			}			
 		}
-		
         return response()->json($moves);
 	}
 }
