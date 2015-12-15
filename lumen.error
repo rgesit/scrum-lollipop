@@ -196,3 +196,4 @@ PHP message: PHP   9. Laravel\Lumen\Application->callLumenController() /data/pro
 PHP message: PHP  10. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
 PHP message: PHP  11. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
 PHP message: PHP  12. call_user_func_array:{/data/project/scrum-lollipop/vendor/illuminate/container/Container.php:503}() /data/project/scrum-lollipop/vendor/illuminate/container/Container.php:50
+2015/12/15 09:44:06 [error] 449#0: *1 open() "/usr/share/nginx/html/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: lumen.lokal, request: "GET /favicon.ico HTTP/1.1", host: "lumen.lokal"
