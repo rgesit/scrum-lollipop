@@ -2,18 +2,7 @@
 <head>
 	
 	<script type="text/javascript">	
-	function load(data){
-
-		// data = [
-  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'bomb' , 'empty', 'empty'],
-  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-  //   	];	
+	function load(){
 
     	for (var i =1; i<=8; i++){    		
     		for(var j=1; j<=8; j++){
