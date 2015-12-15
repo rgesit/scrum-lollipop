@@ -8,9 +8,15 @@
 
 	function check(row, cell){
 		cell = 'cell-'+row+'x'+cell;
+		value = document.getElementById(cell).innerHTML;
+			console.log(value.trim());
 		
-		if(document.getElementById(cell).innerHTML == 'bomb'){
+		if(document.getElementById(cell).innerHTML.trim() == 'bomb'){
 			document.getElementById(cell).innerHTML = 'lost';
+			console.log(value.trim());
+		
+		}else{
+			console.log('Gak ada');
 		}
 
 	}
@@ -31,4 +37,5 @@
 	</tr>
 <?php endfor ?>
 </table>
-</body></html>
+</body>
+</html>
