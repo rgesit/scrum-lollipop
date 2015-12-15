@@ -23,9 +23,9 @@
 
 
 	<form method="post" action="" onsubmit="setName();return false;">
-	<label for="shipname">Ship</label>
-	<input type="text" name="ship" id="ship" onkeypress="setInput()">
-	<button id="dock">Dock</button>
+		<label for="shipname">Ship</label>
+		<input type="text" name="ship" id="ship" onkeypress="setInput()" onfocus="setInput()">
+		<button id="dock">Dock</button>
 	</form>
 
 	<a id="info" class="hidden"></a>
@@ -33,6 +33,7 @@
 	<script type="text/javascript">
 	function setName() {
 		var name = document.getElementById('ship').value;
+
 		document.getElementById('ship-1').innerHTML = name;
 
 		document.getElementById('info').innerHTML = "";
@@ -43,6 +44,7 @@
 			document.getElementById('info').className = "";
 			document.getElementById('ship').value = "";
 		} else if (document.getElementById('gate-1').className == 'occupied') {
+			document.getElementById('info').className = "";
 			document.getElementById('info').className = "hidden";
 		}
 	}
