@@ -36,13 +36,12 @@
 		document.getElementById('ship-1').innerHTML = name;
 
 		document.getElementById('info').innerHTML = "";
-		document.getElementById('info').className = "";
-		document.getElementById('info').className = "hidden";
 
 		if (document.getElementById('gate-1').className == 'free') {
 			document.getElementById('gate-1').className = "occupied";
 			document.getElementById('info').innerHTML = "The Ship has been docked at gate 1";
-			document.getElementById('info').className = "";
+			document.getElementById('info').className = "hidden";
+			document.getElementById('ship').value = "";
 		}
 	}
 	function setInput()
