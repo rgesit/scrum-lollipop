@@ -11,7 +11,7 @@
 		cell = 'cell-'+row+'x'+cell;
 		value = document.getElementById(cell).innerHTML;
 
-		if(document.getElementById(cell).innerHTML.trim() == 'bomb' || document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
+		if(document.getElementById(cell).className == 'bomb' || document.getElementById(cell).innerHTML.trim() == 'bomb' || document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
 			document.getElementById(cell).className = 'lost';		
 		}  else {
                 document.getElementById(cell).className = 'safe';         
