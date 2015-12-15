@@ -125,3 +125,74 @@ PHP message: PHP  10. Laravel\Lumen\Application->callLumenController() /data/pro
 PHP message: PHP  11. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
 PHP message: PHP  12. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
 PHP message: PHP 
+2015/12/14 21:32:34 [error] 536#0: *1 open() "/usr/share/nginx/html/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: lumen.lokal, request: "GET /favicon.ico HTTP/1.1", host: "lumen.lokal"
+2015/12/14 21:39:10 [error] 536#0: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined function App\Http\Controllers\primeFactor() in /data/project/scrum-lollipop/app/Http/Controllers/ArticleController.php on line 103
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /data/project/scrum-lollipop/public/index.php:0
+PHP message: PHP   2. Laravel\Lumen\Application->run() /data/project/scrum-lollipop/public/index.php:28
+PHP message: PHP   3. Laravel\Lumen\Application->dispatch() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1153
+PHP message: PHP   4. Laravel\Lumen\Application->sendThroughPipeline() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1213
+PHP message: PHP   5. Laravel\Lumen\Application->Laravel\Lumen\{closure}() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1442
+PHP message: PHP   6. Laravel\Lumen\Application->handleFoundRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1207
+PHP message: PHP   7. Laravel\Lumen\Application->callActionOnArrayBasedRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1288
+PHP message: PHP   8. Laravel\Lumen\Application->callControllerAction() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1303
+PHP message: PHP   9. Laravel\Lumen\Application->callLumenController() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1335
+PHP message: PHP  10. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
+PHP message: PHP  11. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
+PHP message: PHP  12. call_user_func_array:{/data/project/scrum-lollipop/vendor/illuminate/container/Container.php:503}() /data/project/scrum-lollipop/vendor/illuminate/container/Container.php:50
+2015/12/14 21:40:02 [error] 536#0: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined function App\Http\Controllers\primeFactor() in /data/project/scrum-lollipop/app/Http/Controllers/ArticleController.php on line 103
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /data/project/scrum-lollipop/public/index.php:0
+PHP message: PHP   2. Laravel\Lumen\Application->run() /data/project/scrum-lollipop/public/index.php:28
+PHP message: PHP   3. Laravel\Lumen\Application->dispatch() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1153
+PHP message: PHP   4. Laravel\Lumen\Application->sendThroughPipeline() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1213
+PHP message: PHP   5. Laravel\Lumen\Application->Laravel\Lumen\{closure}() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1442
+PHP message: PHP   6. Laravel\Lumen\Application->handleFoundRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1207
+PHP message: PHP   7. Laravel\Lumen\Application->callActionOnArrayBasedRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1288
+PHP message: PHP   8. Laravel\Lumen\Application->callControllerAction() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1303
+PHP message: PHP   9. Laravel\Lumen\Application->callLumenController() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1335
+PHP message: PHP  10. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
+PHP message: PHP  11. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
+PHP message: PHP  12. call_user_func_array:{/data/project/scrum-lollipop/vendor/illuminate/container/Container.php:503}() /data/project/scrum-lollipop/vendor/illuminate/container/Container.php:50
+2015/12/14 21:40:04 [error] 536#0: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined function App\Http\Controllers\primeFactor() in /data/project/scrum-lollipop/app/Http/Controllers/ArticleController.php on line 103
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /data/project/scrum-lollipop/public/index.php:0
+PHP message: PHP   2. Laravel\Lumen\Application->run() /data/project/scrum-lollipop/public/index.php:28
+PHP message: PHP   3. Laravel\Lumen\Application->dispatch() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1153
+PHP message: PHP   4. Laravel\Lumen\Application->sendThroughPipeline() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1213
+PHP message: PHP   5. Laravel\Lumen\Application->Laravel\Lumen\{closure}() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1442
+PHP message: PHP   6. Laravel\Lumen\Application->handleFoundRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1207
+PHP message: PHP   7. Laravel\Lumen\Application->callActionOnArrayBasedRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1288
+PHP message: PHP   8. Laravel\Lumen\Application->callControllerAction() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1303
+PHP message: PHP   9. Laravel\Lumen\Application->callLumenController() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1335
+PHP message: PHP  10. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
+PHP message: PHP  11. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
+PHP message: PHP  12. call_user_func_array:{/data/project/scrum-lollipop/vendor/illuminate/container/Container.php:503}() /data/project/scrum-lollipop/vendor/illuminate/container/Container.php:50
+2015/12/14 21:40:04 [error] 536#0: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined function App\Http\Controllers\primeFactor() in /data/project/scrum-lollipop/app/Http/Controllers/ArticleController.php on line 103
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /data/project/scrum-lollipop/public/index.php:0
+PHP message: PHP   2. Laravel\Lumen\Application->run() /data/project/scrum-lollipop/public/index.php:28
+PHP message: PHP   3. Laravel\Lumen\Application->dispatch() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1153
+PHP message: PHP   4. Laravel\Lumen\Application->sendThroughPipeline() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1213
+PHP message: PHP   5. Laravel\Lumen\Application->Laravel\Lumen\{closure}() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1442
+PHP message: PHP   6. Laravel\Lumen\Application->handleFoundRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1207
+PHP message: PHP   7. Laravel\Lumen\Application->callActionOnArrayBasedRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1288
+PHP message: PHP   8. Laravel\Lumen\Application->callControllerAction() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1303
+PHP message: PHP   9. Laravel\Lumen\Application->callLumenController() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1335
+PHP message: PHP  10. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
+PHP message: PHP  11. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
+PHP message: PHP  12. call_user_func_array:{/data/project/scrum-lollipop/vendor/illuminate/container/Container.php:503}() /data/project/scrum-lollipop/vendor/illuminate/container/Container.php:50
+2015/12/14 21:40:05 [error] 536#0: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined function App\Http\Controllers\primeFactor() in /data/project/scrum-lollipop/app/Http/Controllers/ArticleController.php on line 103
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /data/project/scrum-lollipop/public/index.php:0
+PHP message: PHP   2. Laravel\Lumen\Application->run() /data/project/scrum-lollipop/public/index.php:28
+PHP message: PHP   3. Laravel\Lumen\Application->dispatch() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1153
+PHP message: PHP   4. Laravel\Lumen\Application->sendThroughPipeline() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1213
+PHP message: PHP   5. Laravel\Lumen\Application->Laravel\Lumen\{closure}() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1442
+PHP message: PHP   6. Laravel\Lumen\Application->handleFoundRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1207
+PHP message: PHP   7. Laravel\Lumen\Application->callActionOnArrayBasedRoute() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1288
+PHP message: PHP   8. Laravel\Lumen\Application->callControllerAction() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1303
+PHP message: PHP   9. Laravel\Lumen\Application->callLumenController() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1335
+PHP message: PHP  10. Laravel\Lumen\Application->callControllerCallable() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1364
+PHP message: PHP  11. Illuminate\Container\Container->call() /data/project/scrum-lollipop/vendor/laravel/lumen-framework/src/Application.php:1399
+PHP message: PHP  12. call_user_func_array:{/data/project/scrum-lollipop/vendor/illuminate/container/Container.php:503}() /data/project/scrum-lollipop/vendor/illuminate/container/Container.php:50
