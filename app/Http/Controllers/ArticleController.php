@@ -88,7 +88,7 @@ class ArticleController extends Controller{
             list($name, $value) = explode('=', $param, 2);
             $params[urldecode($name)][] = urldecode($value);
         }
-        if($_SERVER['HTTP_REFERER'] == "http://".$_SERVER['HTTP_HOST']."/primeFactors/ui") {
+        if(isset($_SERVER['HTTP_REFERER']) and $_SERVER['HTTP_REFERER'] == "http://".$_SERVER['HTTP_HOST']."/primeFactors/ui") {
             #echo'<pre>';print_r($_SERVER);echo'</pre>'; die();
             $id = $req->input('number');
             $json = $this->primeFactor($id);
