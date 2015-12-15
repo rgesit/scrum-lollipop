@@ -50,7 +50,7 @@
 </table>
 
 <script type="text/javascript">
-		load();
+//		load();
 </script>
 </body>
 </html>
