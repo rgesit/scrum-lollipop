@@ -91,9 +91,13 @@ class ArticleController extends Controller{
         if(isset($_SERVER['HTTP_REFERER']) and $_SERVER['HTTP_REFERER'] == "http://".$_SERVER['HTTP_HOST']."/primeFactors/ui") {
             #echo'<pre>';print_r($_SERVER);echo'</pre>'; die();
             $id = $req->input('number');
-            $json = $this->primeFactor($id);
-            $jdata = implode(" x ", $json['decomposition']);
-            echo '<div id="result">'.$id.' = '.$jdata.'</div>'; die();
+            if($id > 1000000) {
+                echo '<div id="result">\'too big number (>1e6)\'</div>'; die();
+            } else {
+                $json = $this->primeFactor($id);
+                $jdata = implode(" x ", $json['decomposition']);
+                echo '<div id="result">'.$id.' = '.$jdata.'</div>'; die();
+            }
         } elseif(count($params['number']) > 1) {
 	        foreach($params['number'] as $num) {
 		        $datatemp = $this->primeFactor($num);
