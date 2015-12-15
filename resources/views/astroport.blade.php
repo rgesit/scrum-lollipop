@@ -43,6 +43,10 @@
 			document.getElementById('info').className = "";
 			document.getElementById('ship').value = "";
 		}
+
+		if (document.getElementById('gate-1').className == 'occupied') {
+			document.getElementById('info').className = "hidden";
+		}
 	}
 	function setInput()
 	{
