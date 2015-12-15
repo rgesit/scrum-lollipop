@@ -34,6 +34,10 @@ class YoseController extends Controller{
 	{
 		$width = $request->input('width');
 		$map = $request->input('map');
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 89504b93a8a04ec6b7fa3edb4d2f5646974f5568
 		$map_arr[] = array();
 		// change map representation
 		$count = 0;

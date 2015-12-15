@@ -4,31 +4,19 @@
 	<script type="text/javascript">	
 	function load(){
 
-    	for (var i =1; i<=8; i++){    		
-    		for(var j=1; j<=8; j++){
-    			//document.getElementById("cell-"+i+"x"+j).innerHTML = data[i-1][j-1];
-    		}
-    	}
+    	
 	}
 
 	function play(row, cell){
 		cell = 'cell-'+row+'x'+cell;
 		value = document.getElementById(cell).innerHTML;
-			console.log(value.trim());
-		
-		if(document.getElementById(cell).innerHTML.trim() == 'bomb'){
-			document.getElementById(cell).className = 'lost';		
-		}else{
-			console.log('Gak ada');
-		}
 
-		 if (document.getElementById(cell).getAttribute('data-bomb') == 'bomb') {
-                document.getElementById(cell).className = 'lost';
-            } else {
-                //document.getElementById('cell-'+x+'x'+y).className = 'safe';
-                //numBomb = checkSurroundings(x,y);
+		if(document.getElementById(cell).innerHTML.trim() == 'bomb' || document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
+			document.getElementById(cell).className = 'lost';		
+		}  else {
+                document.getElementById(cell).className = 'safe';         
                 //document.getElementById('cell-'+x+'x'+y).innerHTML = numBomb;
-            }
+        }
 
 	}
 	</script>
@@ -46,8 +34,5 @@
 <?php endfor ?>
 </table>
 
-<script type="text/javascript">
-//		load();
-</script>
 </body>
 </html>
