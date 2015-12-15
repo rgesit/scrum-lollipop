@@ -92,8 +92,10 @@ class ArticleController extends Controller{
             #echo'<pre>';print_r($_SERVER);echo'</pre>'; die();
             $id = $req->input('number');
             if($id > 1000000) {
-                echo '<div id="result">\'too big number (>1e6)\'</div>'; die();
-            } else {
+                echo '<div id="result">too big number (>1e6)</div>'; die();
+            } elseif(!is_numeric($id)) {
+                echo '<div id="result">'.$id.' is not a number</div>'; die();
+            }else {
                 $json = $this->primeFactor($id);
                 $jdata = implode(" x ", $json['decomposition']);
                 echo '<div id="result">'.$id.' = '.$jdata.'</div>'; die();
