@@ -14,7 +14,7 @@
 		if(document.getElementById(cell).innerHTML.trim() == 'bomb' || document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
 			document.getElementById(cell).className = 'lost';		
 		}  else {
-                document.getElementById('cell-'+x+'x'+y).className = 'safe';         
+                document.getElementById(cell).className = 'safe';         
                 //document.getElementById('cell-'+x+'x'+y).innerHTML = numBomb;
         }
 
