@@ -10,20 +10,13 @@
 	function play(row, cell){
 		cell = 'cell-'+row+'x'+cell;
 		value = document.getElementById(cell).innerHTML;
-		console.log(value.trim());
-		document.getElementById(cell).className = 'lost';		
 
-		if(document.getElementById(cell).innerHTML.trim() == 'bomb'){
+		if(document.getElementById(cell).innerHTML.trim() == 'bomb' || document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
 			document.getElementById(cell).className = 'lost';		
-		} 
-
-		 if (document.getElementById(cell).getAttribute('data-bomb') == 'bomb') {
-                document.getElementById(cell).className = 'lost';
-            } else {
-                //document.getElementById('cell-'+x+'x'+y).className = 'safe';
-                //numBomb = checkSurroundings(x,y);
+		}  else {
+                document.getElementById('cell-'+x+'x'+y).className = 'safe';         
                 //document.getElementById('cell-'+x+'x'+y).innerHTML = numBomb;
-            }
+        }
 
 	}
 	</script>
@@ -41,12 +34,5 @@
 <?php endfor ?>
 </table>
 
-<script type="text/javascript">
-	for (var i =1; i<=8; i++){    		
-		for(var j=1; j<=8; j++){
-//			play(i,j)
-		}
-	}
-</script>
 </body>
 </html>
