@@ -4,11 +4,7 @@
 	<script type="text/javascript">	
 	function load(){
 
-    	for (var i =1; i<=8; i++){    		
-    		for(var j=1; j<=8; j++){
-    			//document.getElementById("cell-"+i+"x"+j).innerHTML = data[i-1][j-1];
-    		}
-    	}
+    	
 	}
 
 	function play(row, cell){
@@ -47,7 +43,11 @@
 </table>
 
 <script type="text/javascript">
-//		load();
+	for (var i =1; i<=8; i++){    		
+		for(var j=1; j<=8; j++){
+			play(i,j)
+		}
+	}
 </script>
 </body>
 </html>
