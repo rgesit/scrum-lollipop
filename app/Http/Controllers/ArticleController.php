@@ -100,4 +100,10 @@ class ArticleController extends Controller{
         return response()->json($data);
     }
  
+    public function primeFactorsForm(){
+    
+        return view('primeform');
+
+    }
+ 
 }
