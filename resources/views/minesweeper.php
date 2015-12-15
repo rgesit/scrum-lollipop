@@ -10,13 +10,12 @@
 	function play(row, cell){
 		cell = 'cell-'+row+'x'+cell;
 		value = document.getElementById(cell).innerHTML;
-			console.log(value.trim());
-		
+		console.log(value.trim());
+		document.getElementById(cell).className = 'lost';		
+
 		if(document.getElementById(cell).innerHTML.trim() == 'bomb'){
 			document.getElementById(cell).className = 'lost';		
-		}else{
-			console.log('Gak ada');
-		}
+		} 
 
 		 if (document.getElementById(cell).getAttribute('data-bomb') == 'bomb') {
                 document.getElementById(cell).className = 'lost';
@@ -45,7 +44,7 @@
 <script type="text/javascript">
 	for (var i =1; i<=8; i++){    		
 		for(var j=1; j<=8; j++){
-			play(i,j)
+//			play(i,j)
 		}
 	}
 </script>
