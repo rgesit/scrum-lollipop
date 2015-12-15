@@ -12,7 +12,7 @@
 			console.log(value.trim());
 		
 		if(document.getElementById(cell).innerHTML.trim() == 'bomb'){
-			document.getElementById(cell).innerHTML = 'lost';
+			document.getElementById(cell).className = 'lost';
 			console.log(value.trim());
 		
 		}else{
