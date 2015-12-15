@@ -22,6 +22,14 @@
 			console.log('Gak ada');
 		}
 
+		 if (document.getElementById(cell).getAttribute('data-bomb') == 'bomb') {
+                document.getElementById(cell).className = 'lost';
+            } else {
+                //document.getElementById('cell-'+x+'x'+y).className = 'safe';
+                //numBomb = checkSurroundings(x,y);
+                //document.getElementById('cell-'+x+'x'+y).innerHTML = numBomb;
+            }
+
 	}
 	</script>
 </head>
