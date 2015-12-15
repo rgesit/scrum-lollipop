@@ -88,7 +88,13 @@ class ArticleController extends Controller{
             list($name, $value) = explode('=', $param, 2);
             $params[urldecode($name)][] = urldecode($value);
         }
-        if(count($params['number']) > 1) {
+        if(isset($_SERVER['HTTP_REFERER']) and $_SERVER['HTTP_REFERER'] == "http://".$_SERVER['HTTP_HOST']."/primeFactors/ui") {
+            #echo'<pre>';print_r($_SERVER);echo'</pre>'; die();
+            $id = $req->input('number');
+            $json = $this->primeFactor($id);
+            $jdata = implode(" x ", $json['decomposition']);
+            echo '<div id="result">'.$id.' = '.$jdata.'</div>'; die();
+        } elseif(count($params['number']) > 1) {
 	        foreach($params['number'] as $num) {
 		        $datatemp = $this->primeFactor($num);
 		        array_push($data, $datatemp);
@@ -98,6 +104,12 @@ class ArticleController extends Controller{
 	        $data = $this->primeFactor($id);
 		}
         return response()->json($data);
+    }
+ 
+    public function primeFactorsForm(){
+    
+        return view('primeform');
+
     }
  
 }

@@ -14,7 +14,7 @@ class YoseController extends Controller{
 			
 		}
 	
-		return view('minesweeper', ['cell' => rand(1,8), 'row'=> rand(1,8)]);
+		return view('minesweeper', ['cell' => 3, 'row'=> 6]);
 	}
 
 	public function ping()
