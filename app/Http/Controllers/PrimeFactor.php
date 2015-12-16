@@ -35,6 +35,20 @@ class PrimeFactor extends Controller{
 	        }
 	        return $data;
     }
+
+    private function formFactor($id) {
+        if($id > 1000000) {
+            return 'too big number (>1e6)';
+        } elseif(!is_numeric($id)) {
+            return $id.' is not a number';
+        } elseif($id<=1) {
+            return $id.' is not an integer > 1';
+        } else {
+            $json = $this->primeFactor($id);
+            $jdata = implode(" x ", $json['decomposition']);
+            return $id.' = '.$jdata;
+        }
+    }
  
     public function factor(Request $req){
 	
@@ -52,17 +66,35 @@ class PrimeFactor extends Controller{
         if(isset($_SERVER['HTTP_REFERER']) and $_SERVER['HTTP_REFERER'] == "http://".$_SERVER['HTTP_HOST']."/primeFactors/ui") {
             #echo'<pre>';print_r($_SERVER);echo'</pre>'; die();
             $id = $req->input('number');
-            if($id > 1000000) {
-                echo '<div id="result">too big number (>1e6)</div>'; die();
-            } elseif(!is_numeric($id)) {
-                echo '<div id="result">'.$id.' is not a number</div>'; die();
-            } elseif($id<=1) {
-                echo '<div id="result">'.$id.' is not an integer > 1</div>'; die();
+
+            #$delimiter = array(", ", ":", ";", "*", "%", "\n", " ");
+            $numdata = explode(", ", $id);
+
+            if(count($numdata) > 1) {
+                $output = '<div id="result"></div>';
+                $output .= '<ol id="results">';
+                foreach ($numdata as $value) {
+                    $decom = $this->formFactor($value);
+                    $output .= '<li>'.$decom.'</li>';
+                }
+                $output .= '</ol>';
+                echo $output; die();
+
             } else {
-                $json = $this->primeFactor($id);
-                $jdata = implode(" x ", $json['decomposition']);
-                echo '<div id="result">'.$id.' = '.$jdata.'</div>'; die();
+
+                if($id > 1000000) {
+                    echo '<div id="result">too big number (>1e6)</div>'; die();
+                } elseif(!is_numeric($id)) {
+                    echo '<div id="result">'.$id.' is not a number</div>'; die();
+                } elseif($id<=1) {
+                    echo '<div id="result">'.$id.' is not an integer > 1</div>'; die();
+                } else {
+                    $json = $this->primeFactor($id);
+                    $jdata = implode(" x ", $json['decomposition']);
+                    echo '<div id="result">'.$id.' = '.$jdata.'</div>'; die();
+                }
             }
+
         } elseif(count($params['number']) > 1) {
 	        foreach($params['number'] as $num) {
 		        $datatemp = $this->primeFactor($num);
