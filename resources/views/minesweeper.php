@@ -57,7 +57,6 @@
 	<tr>
 	<?php for($j = 1; $j<=8; $j++) :?>
 		<td onclick="play(<?php echo $i ?>, <?php echo $j ?>)"  id="cell-<?php echo $i ?>x<?php echo $j?>" class="">
-		dsfsdsf
 		</td>
 	<?php endfor ?>
 	</tr>
