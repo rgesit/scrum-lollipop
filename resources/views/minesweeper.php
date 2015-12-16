@@ -21,6 +21,7 @@
 		}else{
 		    document.getElementById(cell).className = 'safe';                         
             document.getElementById(cell).innerHTML = checkBombAround(r, c);
+            document.getElementById(cell).textContent = checkBombAround(r, c);
 		}		 
     }
 
