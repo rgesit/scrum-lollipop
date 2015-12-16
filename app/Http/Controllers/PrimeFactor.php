@@ -49,7 +49,7 @@ class PrimeFactor extends Controller{
         } else {
             $params['number'] = $req->input('number');
         }
-        if(isset($_SERVER['HTTP_REFERER']) and $_SERVER['HTTP_REFERER'] == "http://".$_SERVER['HTTP_HOST']."/primerFactors/ui") {
+        if(isset($_SERVER['HTTP_REFERER']) and $_SERVER['HTTP_REFERER'] == "http://".$_SERVER['HTTP_HOST']."/primeFactors/ui") {
             #echo'<pre>';print_r($_SERVER);echo'</pre>'; die();
             $id = $req->input('number');
             if($id > 1000000) {
