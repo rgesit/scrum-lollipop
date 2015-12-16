@@ -12,29 +12,20 @@
     	}
 	}
 
-	function play(row, cell){
-		cell = 'cell-'+row+'x'+cell;
+	function play(r, c){
+		cell = 'cell-'+r+'x'+c;
 		value = document.getElementById(cell).innerHTML;
 
-		if (checkBomb(row, cell)){
+		if (checkBomb(cell)){
 			document.getElementById(cell).className = 'lost';
 		}else{
 		    document.getElementById(cell).className = 'safe';                         
-            document.getElementById(cell).innerHTML = checkBombAround(row, cell);
-		}
-		// if(document.getElementById(cell).className == 'bomb' || 
-		// 	document.getElementById(cell).innerHTML.trim() == 'bomb' || 
-		// 	document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
-			
-		// 	return false;		
-		// }  else {
-            
-  //               return true;
-  //       }
+            document.getElementById(cell).innerHTML = checkBombAround(r, c);
+		}		 
     }
 
-    function checkBomb(row, cell){
-		cell = 'cell-'+row+'x'+cell;
+    function checkBomb(cell){
+		//cell = 'cell-'+row+'x'+cell;
 		if(document.getElementById(cell).className == 'bomb' || 
 			document.getElementById(cell).innerHTML.trim() == 'bomb' || 
 			document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
