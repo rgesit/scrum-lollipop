@@ -22,8 +22,7 @@
 			lmn.className = 'lost';
 		}else{
 		    lmn.className = 'safe';                         
-            lmn.innerHTML = 'sdfsdfsdf';
-            
+
             lmn.innerHTML = checkBombAround(r, c);
             lmn.textContent = checkBombAround(r, c);
 		}		 
@@ -46,7 +45,7 @@
     	for(var i=row-1; i<= row+1; i++){
     		for (var j=cell-1; j<= cell+1; j++){
     			if(checkBomb('cell-'+i+'x'+j)){
-    				bombs++;
+    				bombs+=1;
     			}
     		}
     	}
