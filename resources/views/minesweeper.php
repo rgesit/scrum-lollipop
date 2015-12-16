@@ -40,7 +40,7 @@
     	var bombs = 0;
     	for(var i=row-1; i<= row+1; i++){
     		for (var j=cell-1; j<= cell+1; j++){
-    			if(checkBomb(i, j)){
+    			if(checkBomb('cell-'+i+'x'+j)){
     				bombs++;
     			}
     		}
