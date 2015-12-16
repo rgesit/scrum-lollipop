@@ -78,32 +78,46 @@ class YoseController extends Controller{
 		$diff_plane_water_y = $water_loc_y - $plane_loc_y;
 		$diff_water_fire_x = $fire_loc_x - $water_loc_x;
 		$diff_water_fire_y = $fire_loc_y - $water_loc_y;
-		
+		//print_r($diff_plane_water_x);
+		//print_r($diff_plane_water_y);
+
 		// moves: [
 		//		{ dx: 0, dy: 1 },
 		//		{ dx: 1, dy: 0 },
 		//		{ dx: 1, dy: 0 },
 		//	]
 		$moves = array();
-		if ($diff_plane_water_x > 0) {
-			for ($x=0;$x < $diff_plane_water_x;$x++) {
+		for ($x=0;$x < abs($diff_plane_water_x);$x++) {
+			if ($diff_plane_water_x > 0) {
 				$moves[] = array('dx' => 0, 'dy' => 1);
 			}
+			else if ($diff_plane_water_x < 0) {
+				$moves[] = array('dx' => 0, 'dy' => -1);				
+			}
 		}
-		if ($diff_plane_water_y > 0) {
-			for ($y=0;$y < $diff_plane_water_y;$y++) {
+		for ($y=0;$y < abs($diff_plane_water_y);$y++) {
+			if ($diff_plane_water_y > 0) {
 				$moves[] = array('dx' => 1, 'dy' => 0);
 			}
-		}
-		if ($diff_water_fire_x > 0) {
-			for ($x=0;$x < $diff_water_fire_x;$x++) {
-				$moves[] = array('dx' => 0, 'dy' => 1);
+			else if ($diff_plane_water_y < 0) {
+				$moves[] = array('dx' => -1, 'dy' => 0);				
 			}
 		}
-		if ($diff_water_fire_y > 0) {
-			for ($y=0;$y < $diff_water_fire_y;$y++) {
+		for ($x=0;$x < abs($diff_water_fire_x);$x++) {
+			if ($diff_water_fire_x > 0) {
+				$moves[] = array('dx' => 0, 'dy' => 1);
+			} 
+			else if ($diff_water_fire_x < 0) {
+				$moves[] = array('dx' => 0, 'dy' => -1);				
+			}
+		}
+		for ($y=0;$y < abs($diff_water_fire_y);$y++) {
+			if ($diff_water_fire_y > 0) {
 				$moves[] = array('dx' => 1, 'dy' => 0);
 			}			
+			else if ($diff_water_fire_y < 0) {
+				$moves[] = array('dx' => -1, 'dy' => 0);
+			}
 		}
         return response()->json($moves);
 	}
