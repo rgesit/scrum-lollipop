@@ -3,16 +3,6 @@
 	
 	<script type="text/javascript">	
 	function load(){
-	  // data = [
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'bomb' , 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //   ];
     	
     	for(var i=0; i<= 7; i++){
     		for(var j=0; j<= 7; j++){
@@ -26,16 +16,47 @@
 		cell = 'cell-'+row+'x'+cell;
 		value = document.getElementById(cell).innerHTML;
 
+		if (checkBomb(row, cell)){
+			document.getElementById(cell).className = 'lost';
+		}else{
+		    document.getElementById(cell).className = 'safe';                         
+            document.getElementById(cell).innerHTML = checkBombAround(row, cell);
+		}
+		// if(document.getElementById(cell).className == 'bomb' || 
+		// 	document.getElementById(cell).innerHTML.trim() == 'bomb' || 
+		// 	document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
+			
+		// 	return false;		
+		// }  else {
+            
+  //               return true;
+  //       }
+    }
+
+    function checkBomb(row, cell){
+		cell = 'cell-'+row+'x'+cell;
 		if(document.getElementById(cell).className == 'bomb' || 
 			document.getElementById(cell).innerHTML.trim() == 'bomb' || 
 			document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
-			document.getElementById(cell).className = 'lost';		
-		}  else {
-                document.getElementById(cell).className = 'safe';         
-                //document.getElementById('cell-'+x+'x'+y).innerHTML = numBomb;
-        }
+			return true;
+		}else{
+			return false;
+		}
+    }
+    
+    function checkBombAround(row, cell){
+    	var bombs = 0;
+    	for(var i=row-1; i<= row+1; i++){
+    		for (var j=cell-1; j<= cell+1; j++){
+    			if(checkBomb(i, j)){
+    				bombs++;
+    			}
+    		}
+    	}
+    	return bombs;
+    }
 
-	}
+	
 	</script>
 </head>
 <body>
@@ -51,10 +72,5 @@
 	</tr>
 <?php endfor ?>
 </table>
-<script type="text/javascript">
-	
-//load();
-
-</script>
 </body>
 </html>
