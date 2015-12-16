@@ -22,6 +22,8 @@
 			lmn.className = 'lost';
 		}else{
 		    lmn.className = 'safe';                         
+            lmn.innerHTML = 'sdfsdfsdf';
+            
             lmn.innerHTML = checkBombAround(r, c);
             lmn.textContent = checkBombAround(r, c);
 		}		 
@@ -52,7 +54,6 @@
     		bombs = '';
     	}
     	
-    	return 3;
     	return bombs;	    	
     }
 
