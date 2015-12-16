@@ -1,4 +1,5 @@
 <html>
+<div id="last-decomposition"></div>
 <form action="/primeFactors/ui" method="post" id="title" title="title">
 	<div id="title">Title</div><br>
 	<div id="invitation">invitation</div><br>
