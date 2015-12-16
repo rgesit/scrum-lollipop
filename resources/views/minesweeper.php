@@ -3,21 +3,21 @@
 	
 	<script type="text/javascript">	
 	function load(){
-	  data = [
-	        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	        ['empty', 'empty', 'empty', 'empty', 'empty', 'bomb' , 'empty', 'empty'],
-	        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	    ];
+	  // data = [
+	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'bomb' , 'empty', 'empty'],
+	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+	  //   ];
     	
     	for(var i=0; i<= 7; i++){
     		for(var j=0; j<= 7; j++){
     			cell = 'cell-'+(i+1)+'x'+(j+1);
-				document.getElementById(cell).className = data[i][j];      
+                    document.getElementById(cell).setAttribute('data-bomb', document.grid[i][j]);
     		}
     	}
 	}
