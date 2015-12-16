@@ -52,6 +52,7 @@
     		bombs = '';
     	}
     	
+    	return 3;
     	return bombs;	    	
     }
 
