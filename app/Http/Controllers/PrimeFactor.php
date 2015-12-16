@@ -49,6 +49,53 @@ class PrimeFactor extends Controller{
             return $id.' = '.$jdata;
         }
     }
+
+    private function romanToInteger($roman) {
+        $romans = array(
+        'M' => 1000,
+        'CM' => 900,
+        'D' => 500,
+        'CD' => 400,
+        'C' => 100,
+        'XC' => 90,
+        'L' => 50,
+        'XL' => 40,
+        'X' => 10,
+        'IX' => 9,
+        'V' => 5,
+        'IV' => 4,
+        'I' => 1);
+
+        #$roman = 'MMMCMXCIX';
+        $result = 0;
+
+        foreach ($romans as $key => $value) {
+            while (strpos($roman, $key) === 0) {
+                $result += $value;
+                $roman = substr($roman, strlen($key));
+            }
+        }
+        return $result;
+    }
+
+    private function integerToRoman($integer, $upcase = true) { 
+        $table = array('M'=>1000, 'CM'=>900, 'D'=>500, 'CD'=>400, 'C'=>100, 'XC'=>90, 'L'=>50, 'XL'=>40, 'X'=>10, 'IX'=>9, 'V'=>5, 'IV'=>4, 'I'=>1); 
+        $return = ''; 
+        while($integer > 0) 
+        { 
+            foreach($table as $rom=>$arb) 
+            { 
+                if($integer >= $arb) 
+                { 
+                    $integer -= $arb; 
+                    $return .= $rom; 
+                    break; 
+                } 
+            } 
+        } 
+
+        return $return; 
+    } 
  
     public function factor(Request $req){
 	
@@ -100,6 +147,14 @@ class PrimeFactor extends Controller{
 		        $datatemp = $this->primeFactor($num);
 		        array_push($data, $datatemp);
 	        }
+        } elseif(ctype_upper($req->input('number'))) {
+            $id = $req->input('number');
+            $integernumber = $this->romanToInteger($id);
+            $data = $this->primeFactor($integernumber);
+            $data['number'] = $this->integerToRoman($data['number']);
+            foreach ($data['decomposition'] as $key => $value) {
+                $data['decomposition'][$key] = $this->integerToRoman($value);
+            }
         } else {
 	        $id = $req->input('number');
 	        $data = $this->primeFactor($id);
