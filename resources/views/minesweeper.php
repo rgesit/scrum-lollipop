@@ -3,16 +3,6 @@
 	
 	<script type="text/javascript">	
 	function load(){
-	  // data = [
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'bomb' , 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //       ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-	  //   ];
     	
     	for(var i=0; i<= 7; i++){
     		for(var j=0; j<= 7; j++){
@@ -22,20 +12,43 @@
     	}
 	}
 
-	function play(row, cell){
-		cell = 'cell-'+row+'x'+cell;
+	function play(r, c){
+		cell = 'cell-'+r+'x'+c;
 		value = document.getElementById(cell).innerHTML;
 
+		if (checkBomb(cell)){
+			document.getElementById(cell).className = 'lost';
+		}else{
+		    document.getElementById(cell).className = 'safe';                         
+            document.getElementById(cell).innerHTML = checkBombAround(r, c);
+            document.getElementById(cell).textContent = checkBombAround(r, c);
+		}		 
+    }
+
+    function checkBomb(cell){
+		//cell = 'cell-'+row+'x'+cell;
 		if(document.getElementById(cell).className == 'bomb' || 
 			document.getElementById(cell).innerHTML.trim() == 'bomb' || 
 			document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
-			document.getElementById(cell).className = 'lost';		
-		}  else {
-                document.getElementById(cell).className = 'safe';         
-                //document.getElementById('cell-'+x+'x'+y).innerHTML = numBomb;
-        }
+			return true;
+		}else{
+			return false;
+		}
+    }
+    
+    function checkBombAround(row, cell){
+    	var bombs = 0;
+    	for(var i=row-1; i<= row+1; i++){
+    		for (var j=cell-1; j<= cell+1; j++){
+    			if(checkBomb('cell-'+i+'x'+j)){
+    				bombs++;
+    			}
+    		}
+    	}
+    	return bombs;
+    }
 
-	}
+	
 	</script>
 </head>
 <body>
@@ -45,16 +58,10 @@
 	<tr>
 	<?php for($j = 1; $j<=8; $j++) :?>
 		<td onclick="play(<?php echo $i ?>, <?php echo $j ?>)"  id="cell-<?php echo $i ?>x<?php echo $j?>" class="">
-		dsfsdsf
 		</td>
 	<?php endfor ?>
 	</tr>
 <?php endfor ?>
 </table>
-<script type="text/javascript">
-	
-//load();
-
-</script>
 </body>
 </html>
