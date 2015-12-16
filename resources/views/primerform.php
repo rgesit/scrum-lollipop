@@ -1,5 +1,5 @@
 <html>
-<form action="/primeFactors/ui" method="post" id="title" title="title">
+<form action="/primerFactors/ui" method="post" id="title" title="title">
 	<div id="title">Title</div><br>
 	<div id="invitation">invitation</div><br>
 	Number : <input type="text" name="number" id="number">

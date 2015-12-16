@@ -25,7 +25,10 @@ $app->put('api/article/{id}','ArticleController@updateArticle');
 $app->delete('api/article/{id}','ArticleController@deleteArticle');
 
 $app->get('primeFactors','PrimeFactor@factor');
-$app->get('primeFactors/ui','PrimeFactor@Form');
+$app->get('primeFactors/ui','PrimeFactor@form');
+$app->get('primerFactors/ui','PrimeFactor@formPrimer');
+$app->post('primeFactors/ui','PrimeFactor@factor');
+$app->post('primerFactors/ui','PrimeFactor@factor');
  
 $app->get('minesweeper', 'YoseController@minesweeper');
 
