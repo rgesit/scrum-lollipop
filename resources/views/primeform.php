@@ -1,5 +1,5 @@
 <html>
-<div id="last-decomposition"><?= str_replace(['<div id="result">','</div'],"",file_get_contents("/data/project/lollipop/last.txt")) ?></div>
+<div id="last-decomposition"><?= str_replace(['<div id="result">','</div>'],"",@file_get_contents("/data/project/lollipop/last.txt")) ?></div>
 <form action="/primeFactors/ui" method="post" id="title" title="title">
 	<div id="title">Title</div><br>
 	<div id="invitation">invitation</div><br>
