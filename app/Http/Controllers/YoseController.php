@@ -119,6 +119,11 @@ class YoseController extends Controller{
 				$moves[] = array('dx' => -1, 'dy' => 0);
 			}
 		}
-        return response()->json($moves);
+		$map_result = array();
+		for ($i=0;$i < $width;$i++) {
+			$map_result[$i] = implode("", $map_arr[$i]);
+		}
+		$all = array("map" => $map_result, "moves" => $moves);
+        return response()->json($all);
 	}
 }
