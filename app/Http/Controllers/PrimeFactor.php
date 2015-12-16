@@ -41,9 +41,13 @@ class PrimeFactor extends Controller{
 		$data = array();
         $query = explode('&', $_SERVER['QUERY_STRING']);
         $params = array();
-        foreach( $query as $param ) {
-            list($name, $value) = explode('=', $param, 2);
-            $params[urldecode($name)][] = urldecode($value);
+        if(count($query) > 1) {
+            foreach( $query as $param ) {
+                list($name, $value) = explode('=', $param, 2);
+                $params[urldecode($name)][] = urldecode($value);
+            }
+        } else {
+            $params['number'] = $req->input('number');
         }
         if(isset($_SERVER['HTTP_REFERER']) and $_SERVER['HTTP_REFERER'] == "http://".$_SERVER['HTTP_HOST']."/primeFactors/ui") {
             #echo'<pre>';print_r($_SERVER);echo'</pre>'; die();
@@ -74,6 +78,12 @@ class PrimeFactor extends Controller{
     public function form(){
     
         return view('primeform');
+
+    }
+ 
+    public function formPrimer(){
+    
+        return view('primerform');
 
     }
  

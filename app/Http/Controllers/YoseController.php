@@ -114,7 +114,7 @@ class YoseController extends Controller{
 		for ($y=0;$y < abs($diff_water_fire_y);$y++) {
 			if ($diff_water_fire_y > 0) {
 				$moves[] = array('dx' => 1, 'dy' => 0);
-			}			
+			}
 			else if ($diff_water_fire_y < 0) {
 				$moves[] = array('dx' => -1, 'dy' => 0);
 			}
