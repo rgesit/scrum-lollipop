@@ -53,7 +53,7 @@ class PrimeFactor extends Controller{
     public function factor(Request $req){
 	
 		$data = array();
-        $query = explode('&', $_SERVER['QUERY_STRING']);
+        $query = explode('&', @$_SERVER['QUERY_STRING']);
         $params = array();
         if(count($query) > 1) {
             foreach( $query as $param ) {
