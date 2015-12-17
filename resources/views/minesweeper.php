@@ -14,22 +14,26 @@
 
 	function play(r, c){
 		cell = 'cell-'+r+'x'+c;
-		value = document.getElementById(cell).innerHTML;
+		lmn = document.getElementById(cell);
+
+		//if (lmn.className == 'safe') return;
 
 		if (checkBomb(cell)){
-			document.getElementById(cell).className = 'lost';
+			lmn.className = 'lost';
 		}else{
-		    document.getElementById(cell).className = 'safe';                         
-            document.getElementById(cell).innerHTML = checkBombAround(r, c);
-            document.getElementById(cell).textContent = checkBombAround(r, c);
+		    lmn.className = 'safe';                         
+
+            lmn.innerHTML = checkBombAround(r, c);
+            lmn.textContent = checkBombAround(r, c);
 		}		 
     }
 
     function checkBomb(cell){
-		//cell = 'cell-'+row+'x'+cell;
-		if(document.getElementById(cell).className == 'bomb' || 
-			document.getElementById(cell).innerHTML.trim() == 'bomb' || 
-			document.getElementById(cell).getAttribute('data-bomb') == 'bomb'){
+		lmn = document.getElementById(cell);
+
+		if(lmn.className == 'bomb' || 
+			lmn.innerHTML.trim() == 'bomb' || 
+			lmn.getAttribute('data-bomb') == 'bomb'){
 			return true;
 		}else{
 			return false;
@@ -41,11 +45,16 @@
     	for(var i=row-1; i<= row+1; i++){
     		for (var j=cell-1; j<= cell+1; j++){
     			if(checkBomb('cell-'+i+'x'+j)){
-    				bombs++;
+    				bombs+=1;
     			}
     		}
     	}
-    	return bombs;
+    	if (bombs == 0){
+    		bombs = '';
+    	}
+    	
+    	return 'error';
+    	return bombs;	    	
     }
 
 	

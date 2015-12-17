@@ -49,6 +49,53 @@ class PrimeFactor extends Controller{
             return $id.' = '.$jdata;
         }
     }
+
+    private function romanToInteger($roman) {
+        $romans = array(
+        'M' => 1000,
+        'CM' => 900,
+        'D' => 500,
+        'CD' => 400,
+        'C' => 100,
+        'XC' => 90,
+        'L' => 50,
+        'XL' => 40,
+        'X' => 10,
+        'IX' => 9,
+        'V' => 5,
+        'IV' => 4,
+        'I' => 1);
+
+        #$roman = 'MMMCMXCIX';
+        $result = 0;
+
+        foreach ($romans as $key => $value) {
+            while (strpos($roman, $key) === 0) {
+                $result += $value;
+                $roman = substr($roman, strlen($key));
+            }
+        }
+        return $result;
+    }
+
+    private function integerToRoman($integer, $upcase = true) { 
+        $table = array('M'=>1000, 'CM'=>900, 'D'=>500, 'CD'=>400, 'C'=>100, 'XC'=>90, 'L'=>50, 'XL'=>40, 'X'=>10, 'IX'=>9, 'V'=>5, 'IV'=>4, 'I'=>1); 
+        $return = ''; 
+        while($integer > 0) 
+        { 
+            foreach($table as $rom=>$arb) 
+            { 
+                if($integer >= $arb) 
+                { 
+                    $integer -= $arb; 
+                    $return .= $rom; 
+                    break; 
+                } 
+            } 
+        } 
+
+        return $return; 
+    } 
  
     public function factor(Request $req){
 	
@@ -81,18 +128,37 @@ class PrimeFactor extends Controller{
                 echo $output; die();
 
             } else {
-
+                $file = "/data/project/lollipop/last.txt";
+                $last = str_replace("result", "last-decomposition", file_get_contents($file));
+                echo $last;
                 if($id > 1000000) {
-                    echo '<div id="result">too big number (>1e6)</div>'; die();
+                    $output =  '<div id="result">too big number (>1e6)</div>'; 
+                    echo $output;
+                    #die();
                 } elseif(!is_numeric($id)) {
-                    echo '<div id="result">'.$id.' is not a number</div>'; die();
+                    $output = '<div id="result">'.$id.' is not a number</div>'; 
+                    echo $output;
+                    #die();
                 } elseif($id<=1) {
-                    echo '<div id="result">'.$id.' is not an integer > 1</div>'; die();
+                    $output = '<div id="result">'.$id.' is not an integer > 1</div>'; 
+                    echo $output;
+                    #die();
                 } else {
                     $json = $this->primeFactor($id);
                     $jdata = implode(" x ", $json['decomposition']);
-                    echo '<div id="result">'.$id.' = '.$jdata.'</div>'; die();
+                    $output = '<div id="result">'.$id.' = '.$jdata.'</div>'; 
+                    echo $output;
+                    #die();
                 }
+                $file = "/data/project/lollipop/last.txt";
+                $fp = @fopen($file, "w+");
+                    if($fp){
+                    @fwrite($fp, $output);
+                    #echo "overwrite to : ".$file."<br>\n";
+                    @fclose($fp);
+                    @chmod($fileXML, 0775);
+                }
+                die();
             }
 
         } elseif(count($params['number']) > 1) {
@@ -100,6 +166,14 @@ class PrimeFactor extends Controller{
 		        $datatemp = $this->primeFactor($num);
 		        array_push($data, $datatemp);
 	        }
+        } elseif(ctype_upper($req->input('number'))) {
+            $id = $req->input('number');
+            $integernumber = $this->romanToInteger($id);
+            $data = $this->primeFactor($integernumber);
+            $data['number'] = $this->integerToRoman($data['number']);
+            foreach ($data['decomposition'] as $key => $value) {
+                $data['decomposition'][$key] = $this->integerToRoman($value);
+            }
         } else {
 	        $id = $req->input('number');
 	        $data = $this->primeFactor($id);
