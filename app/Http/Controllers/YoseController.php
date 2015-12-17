@@ -120,7 +120,7 @@ class YoseController extends Controller{
 		}
 	}
 	
-	private function approach_for_fire($plane_loc_x, $plane_loc_y, $diff_x, $diff_y, $map, &$moves)
+	private function approach_for_fire($plane_loc_x, $plane_loc_y, $diff_x, $diff_y, &$map, &$moves)
 	{
 		$map[$plane_loc_y][$plane_loc_x] = 'V';
 		if ($diff_x > 0) {
